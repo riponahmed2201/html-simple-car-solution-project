@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<title>Service Page</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+<style>
+    body,
+    html {
+        height: 100%;
+        font-family: "Inconsolata", sans-serif;
+    }
+
+    .bgimg {
+        background-position: center;
+        background-size: cover;
+        background-image: url("images/car-repair.jpg");
+        min-height: 90%;
+        object-fit: contain;
+    }
+
+    .menu {
+        display: none;
+    }
+</style>
+
+<body>
+
+    <!-- Links (sit on top) -->
+    <div class="w3-top">
+        <div class="w3-row w3-padding w3-black">
+            <div class="w3-col s3">
+                <a href="home.html" class="w3-button w3-block w3-black">HOME</a>
+            </div>
+            <div class="w3-col s3">
+                <a href="about.html" class="w3-button w3-block w3-black">ABOUT</a>
+            </div>
+            <div class="w3-col s3">
+                <a href="menu.html" class="w3-button w3-block w3-black">SERVICE</a>
+            </div>
+            <div class="w3-col s3">
+                <a href="contact.html" class="w3-button w3-block w3-black">CONTACT US</a>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Header with image -->
+    <header class="bgimg w3-display-container w3-grayscale-min" id="home">
+        <div class="w3-display-bottomleft w3-center w3-padding-large w3-hide-small">
+            <span class="w3-tag">Open from 6am to 5pm</span>
+        </div>
+        <div class="w3-display-middle w3-center">
+            <span class="w3-text-white" style="font-size:90px">Car<br>Solution</span>
+        </div>
+        <div class="w3-display-bottomright w3-center w3-padding-large">
+            <span class="w3-text-white">15 Adr street, 5015</span>
+        </div>
+    </header>
+
+    <!-- Add a background color and large text to the whole page -->
+    <div class="w3-sand w3-grayscale w3-large">
+        <!-- Menu Container -->
+        <div class="w3-container" id="menu">
+            <div class="w3-content" style="max-width:700px">
+
+                <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">OUR SERVICES</span></h5>
+
+                <div class="w3-row w3-center w3-card w3-padding">
+                    <a href="javascript:void(0)" onclick="openMenu(event, 'Eat');" id="myLink">
+                        <div class="w3-col s12 tablink">Car Repair</div>
+                    </a>
+                </div>
+
+                <div id="Eat" class="w3-container menu w3-padding-48 w3-card">
+                    <h5>Car Engine Repair Service</h5>
+                    <p class="w3-text-grey">Inspecting vehicle engine and mechanical/electrical components to diagnose
+                        issues accurately.</p><br>
+
+                    <h5>Car AC Repair Service</h5>
+                    <p class="w3-text-grey">Air-conditioning and Cooler Technician or A/C Technician is responsible in
+                        conducting maintenance check and repairs for air-con and other cooling or heating system</p>
+                    <br>
+
+                    <h5>Vehicle Tracker</h5>
+                    <p class="w3-text-grey">Car trackers track the location of your car using global positioning system
+                        (GPS) technology.</p><br>
+
+                    <h5>Car Checkup & Maintenance</h5>
+                    <p class="w3-text-grey">Performed high performance test drive for detecting fault with suspension,
+                        gearbox, engine and breakes.</p>
+
+                </div>
+                <img src="images/home-background.jpg" style="width:100%;max-width:1000px;margin-top:32px;">
+            </div>
+        </div>
+
+    </div>
+    <!-- End page content -->
+    </div>
+    <!-- Footer -->
+    <footer class="w3-center w3-light-grey w3-padding-48 w3-large">
+        <p>Powered by <a href="#" title="W3.CSS" target="_blank" class="w3-hover-text-green">CAR SOLUTION</a></p>
+    </footer>
+    <script>
+        // Tabbed Menu
+        function openMenu(evt, menuName) {
+            var i, x, tablinks;
+            x = document.getElementsByClassName("menu");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablink");
+            for (i = 0; i < x.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" w3-dark-grey", "");
+            }
+            document.getElementById(menuName).style.display = "block";
+            evt.currentTarget.firstElementChild.className += " w3-dark-grey";
+        }
+        document.getElementById("myLink").click();
+    </script>
+
+</body>
+
+</html>
